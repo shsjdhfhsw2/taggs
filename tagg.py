@@ -21,7 +21,7 @@
 
 # Module author: @ftgmodulesbyfl1yd
 
-import random time
+import random, time
 
 from .. import loader, utils
 
