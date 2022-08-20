@@ -1,28 +1,5 @@
-﻿# ---------------------------------------------------------------------------------
-#  ,_     _          
-#  |\_,-~/          
-#  / _  _ |    ,--.  🌐 This module was loaded through https://t.me/hikkamods_bot
-# (  @  @ )   / ,-'  🔓 Not licensed.
-#  \  _T_/-._( (     
-#  /         `. \    ⚠️ Owner of this bot doesn't take responsibility for any
-# |         _  \ |   errors caused by this module or this module being non-working
-#  \ \ ,  /      |   and doesn't take ownership of any copyrighted material.
-#   || |-_\__   /    
-#  ((_/`(____,-'     
-# ---------------------------------------------------------------------------------
-# Name: tags
-# Description: Secretly tag a user
-# Author: GeekTG
-# Commands:
-# .tag | .tagall
-# ---------------------------------------------------------------------------------
-
-# -*- coding: utf-8 -*-
-
-# Module author: @ftgmodulesbyfl1yd
-
 import random
-
+import time
 from .. import loader, utils
 
 
@@ -67,7 +44,7 @@ class TagMod(loader.Module):
         tags = []
         async for user in message.client.iter_participants(message.to_id):
             tags.append(f"<a href='tg://user?id={user.id}'>\u2060</a>")
-        chunkss = list(chunks(tags, 0))
+        chunkss = list(chunks(tags, 20))
         random.shuffle(chunkss)
         for chunk in chunkss:
             await message.client.send_message(message.to_id, tag + "\u2060".join(chunk))
