@@ -5,7 +5,6 @@ from .. import loader, utils
 
 @loader.tds
 class TagMod(loader.Module):
-    """Secretly tag a user"""
 
     strings = {"name": "Tagss"}
 
